@@ -1,0 +1,185 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  /* Body and background */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/source/backdroploginregis.jpg'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For positioning the overlay */
+    overflow: hidden;
+}
+
+  /* Shadow overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.57); /* Semi-transparent black for shadow effect */
+    z-index: -1; /* Keep the shadow below all content */
+}
+
+  /* Header and Navbar */
+header {
+    width: 100vw; /* Full viewport width */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px; /* Compact padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+.logo {
+    font-size: 25px;
+    color: #007bff;
+    font-weight: bold; /* Make the entire logo bold */
+}
+
+.blue-text {
+    color: #007bff; /* Blue color for "Aja!" */
+}
+
+.logo span {
+    color: #ffb400;
+}
+
+  /* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 65px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffb400; /* Highlight on hover */
+}
+
+  /* Authentication Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .signup-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.signup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+  /* Signup Form */
+.login-form-container {
+    display: flex;
+    width: 522px;
+    height: 449px;
+    padding: 44px 35px 43px 35px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    border-radius: 16px;
+    border: 3px solid rgba(69, 146, 228, 0.26);
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid rgba(69, 146, 228, 0.26);
+    font-size: 14px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+      gap: 8px; /* Smaller gap on smaller screens */
+    }
+
+    .auth-buttons {
+        gap: 5px;
+    }
+
+    .login-form {
+        width: 90%;
+        padding: 20px 20px;
+    }
+}

@@ -1,0 +1,204 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/source/backdroploginregis.jpg'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For positioning the overlay */
+  overflow: hidden;
+}
+
+/* Shadow Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.57); /* Semi-transparent black for shadow effect */
+  z-index: -1; /* Keeps the shadow below all content */
+}
+
+/* Header and Navbar */
+header {
+  width: 100vw; /* Full viewport width */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px; /* Compact padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+/* Logo */
+.logo {
+  font-size: 25px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ffb400;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 65px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffb400;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 12px; /* Membesarkan tombol */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Membesarkan teks tombol */
+  transition: background-color 0.3s;
+}
+
+.signup-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Signup Form */
+.signup-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 70px; /* Adjusted for fixed header height */
+}
+
+.signup-form {
+  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+  padding: 25px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); /* Shadow for layering effect */
+  width: 350px; /* Lebar form lebih besar */
+  text-align: center;
+  backdrop-filter: blur(10px); /* Optional: blurs the background for a glass effect */
+  border: 2px solid rgba(99, 155, 216, 0.5); /* Light blue border for layering effect */
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px; /* Membesarkan tinggi input */
+  font-size: 14px; /* Membesarkan teks */
+  margin-bottom: 20px; /* Memberi jarak antar input */
+  border-radius: 5px;
+  border: 1px solid rgba(0, 122, 253, 0.5); /* Light blue border around input boxes */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s;
+}
+
+.signup-form input:focus {
+  border-color: #007bfe; /* Darker blue on focus */
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 15px; /* Membesarkan tombol */
+  background-color: #5da4f1;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px; /* Tombol lebih melengkung */
+  cursor: pointer;
+  font-size: 18px; /* Membesarkan teks tombol */
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+      gap: 8px;
+  }
+
+  .auth-buttons {
+      gap: 5px;
+  }
+
+  .signup-form {
+      width: 90%; /* Lebar form mengikuti layar */
+      padding: 20px;
+  }
+
+  .login-btn,
+  .signup-btn {
+      padding: 8px 15px; /* Tombol lebih kecil pada layar kecil */
+      font-size: 14px;
+  }
+
+  .signup-form input {
+      padding: 8px;
+      font-size: 12px;
+  }
+
+  .signup-form button {
+    padding: 12px;
+    font-size: 16px;
+    }
+}
